@@ -5,7 +5,7 @@ Backend is built with Node.js + Express, PostgreSQL database, and Prisma ORM. Ev
 
 ---
 
-## 🔹 Features
+## Features
 
 - User registration and login
 - CRUD operations for todos
@@ -15,10 +15,11 @@ Backend is built with Node.js + Express, PostgreSQL database, and Prisma ORM. Ev
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the repository
 
 ```bash
-git clone <REPO_URL>
-cd <REPO_NAME>
+git clone https://github.com/sula7ne/todo-app-backend.git
+cd todo-app-backend
+```
