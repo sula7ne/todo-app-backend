@@ -55,7 +55,6 @@ This stops containers but keeps the database data
 Authentication:
 - POST /auth/register — register a new user
 - POST /auth/login — login and receive JWT
-- POST /auth/refresh — refresh access token
 
 Todos (JWT required):
 - GET /todos — get all todos
