@@ -1,11 +1,11 @@
 import path, { dirname } from "path"
 
-import adminRoutes from "./routes/adminRoutes/adminRoutes.js"
+import adminRoutes from "./routes/adminRoutes/admin.routes.js"
 import authMiddleware from "./middleware/authMiddleware.js"
-import authRoutes from "./routes/authRoutes.js"
+import authRoutes from "./routes/auth.routes.js"
 import express from "express"
 import { fileURLToPath } from "url"
-import todoRoutes from "./routes/todoRoutes.js"
+import todoRoutes from "./routes/todo.routes.js"
 
 const app = express();
 const PORT = process.env.PORT || 3000;

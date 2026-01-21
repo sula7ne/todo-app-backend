@@ -1,0 +1,72 @@
+# /auth
+### POST /auth/register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "test@mail.ru",
+    "password": "123456"
+}
+
+### POST /auth/login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "test@mail.ru",
+    "password": "123456"
+}
+
+
+
+# /todos
+### GET /todos
+GET http://localhost:3000/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4OTc4Njk1LCJleHAiOjE3NjkwNjUwOTV9.jazTFoxsJFOCmbIu_WNSfopFC1Vb-2cHkEjQvaIQWis
+
+### POST /todos
+POST http://localhost:3000/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4OTc4Njk1LCJleHAiOjE3NjkwNjUwOTV9.jazTFoxsJFOCmbIu_WNSfopFC1Vb-2cHkEjQvaIQWis
+Content-Type: application/json
+
+{
+    "task": "test todo"
+}
+
+### PUT /todos/:id
+PUT http://localhost:3000/todos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4OTc4Njk1LCJleHAiOjE3NjkwNjUwOTV9.jazTFoxsJFOCmbIu_WNSfopFC1Vb-2cHkEjQvaIQWis
+Content-Type: application/json
+
+{
+    "task": "changed",
+    "completed": true
+}
+
+### DELETE /todos/:id
+DELETE http://localhost:3000/todos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY4OTc4Njk1LCJleHAiOjE3NjkwNjUwOTV9.jazTFoxsJFOCmbIu_WNSfopFC1Vb-2cHkEjQvaIQWis
+
+
+
+# /admin/users ADMIN
+### GET /admin/users ADMIN
+GET http://localhost:3000/admin/users
+
+### GET /admin/users/:id ADMIN
+GET http://localhost:3000/admin/users/1
+
+### DELETE /admin/users/:id ADMIN
+DELETE http://localhost:3000/admin/users/1
+
+
+
+# /admin/todos ADMIN
+### GET /admin/todos ADMIN
+GET http://localhost:3000/admin/todos
+
+### GET /admin/todos/:id ADMIN
+GET http://localhost:3000/admin/todos/1
+
+### DELETE /admin/todos/:id ADMIN
+DELETE http://localhost:3000/admin/todos/1

@@ -1,6 +1,6 @@
 import express from "express"
-import todosRoutes from "./todoRoutes.js"
-import usersRoutes from "./usersRoutes.js"
+import todosRoutes from "./todo.routes.js"
+import usersRoutes from "./users.routes.js"
 
 const router = express.Router();
 

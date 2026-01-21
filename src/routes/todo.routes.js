@@ -1,4 +1,4 @@
-import { addTodo, deleteTodo, getTodos, updateTodo } from "../controllers/todoController.js"
+import { addTodo, deleteTodo, getTodos, updateTodo } from "../controllers/todo.controller.js"
 
 import express from "express"
 

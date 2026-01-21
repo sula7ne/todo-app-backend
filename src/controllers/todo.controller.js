@@ -1,8 +1,11 @@
-import { addTodoService, deleteTodoService, getTodosService, updateTodoService } from "../services/todoService.js"
+import { TodoService } from "../services/todo.service.js"
+import { prisma } from "../prisma.js";
+
+const todoService = new TodoService(prisma);
 
 export const getTodos = async (req, res) => {
     try {
-        const todos = await getTodosService(req.userId);
+        const todos = await todoService.getTodos(req.userId);
         
         res.status(200).json(todos);
     } catch(err) {
@@ -12,7 +15,7 @@ export const getTodos = async (req, res) => {
 
 export const addTodo = async (req, res) => {
     try {
-        const addedTodo = await addTodoService(req.userId, req.body.task);
+        const addedTodo = await todoService.addTodo(req.userId, req.body.task);
 
         res.status(201).json(addedTodo);
     } catch(err) {
@@ -22,7 +25,7 @@ export const addTodo = async (req, res) => {
 
 export const updateTodo = async (req, res) => {
     try {
-        const updatedTodo = await updateTodoService(req.params.id, req.userId, req.body);
+        const updatedTodo = await todoService.updateTodo(req.params.id, req.userId, req.body);
         
         res.status(200).json(updatedTodo);
     } catch(err) {
@@ -32,7 +35,7 @@ export const updateTodo = async (req, res) => {
 
 export const deleteTodo = async (req, res) => {
     try {
-        const deletedTodo = await deleteTodoService(req.params.id, req.userId);
+        const deletedTodo = await todoService.deleteTodo(req.params.id, req.userId);
 
         res.status(200).send({ message: deletedTodo });
     } catch(err) {

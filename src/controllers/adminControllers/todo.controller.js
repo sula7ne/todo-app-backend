@@ -1,8 +1,11 @@
-import { deleteTodoService, getTodoService, getTodosService } from "../../services/adminServices/todoService.js";
+import { TodoService } from "../../services/adminServices/todo.service.js";
+import { prisma } from "../../prisma.js";
+
+const todoService = new TodoService(prisma);
 
 export const getTodos = async (req, res) => {
     try {
-        const todos = await getTodosService();
+        const todos = await todoService.getTodos();
 
         res.status(200).json(todos);
     } catch(err) {
@@ -12,7 +15,7 @@ export const getTodos = async (req, res) => {
 
 export const getTodo = async (req, res) => {
     try {
-        const todo = await getTodoService(req.params.id);
+        const todo = await todoService.getTodo(req.params.id);
         
         res.status(200).json(todo);
     } catch(err) {
@@ -22,7 +25,7 @@ export const getTodo = async (req, res) => {
 
 export const deleteTodo = async (req, res) => {
     try {
-        const deletedTodo = await deleteTodoService(req.params.id);
+        const deletedTodo = await todoService.deleteTodo(req.params.id);
 
         res.status(200).json({ message: deletedTodo });
     } catch(err) {

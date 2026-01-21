@@ -1,4 +1,4 @@
-import { deleteUser, getUser, getUsers } from "../../controllers/adminControllers/usersController.js"
+import { deleteUser, getUser, getUsers } from "../../controllers/adminControllers/users.controller.js"
 
 import express from "express"
 
