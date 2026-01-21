@@ -1,7 +1,8 @@
 # Todo App
 
-A simple Todo application with user registration, authentication, and task management.  
+ A simple Todo application with user registration, authentication, and task management.  
 Backend is built with Node.js + Express, PostgreSQL database, and Prisma ORM. Everything runs via Docker Compose.
+ You can use added REST Client(```todo-app.rest```) for API requests.
 
 ---
 
